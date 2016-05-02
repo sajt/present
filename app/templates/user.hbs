@@ -1,0 +1,9 @@
+{{#form-for model as |f|}}
+  {{f.text-field "firstName"}}
+  {{f.text-field "lastName"}}
+  {{f.date-field "birthDate"}}
+  {{f.radio-field "gender" "female"}}
+  {{f.select-field "gender" "unknown male female"}}
+  {{f.color-field "url"}}
+  {{f.submit "Save" submit="submit"}}
+{{/form-for}}
