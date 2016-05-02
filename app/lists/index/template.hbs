@@ -1,0 +1,42 @@
+<h1>Lists list</h1>
+
+<p>
+  {{link-to "New List" "lists.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |list|}}
+        <tr>
+          <td>
+            {{list.name}}
+          </td>
+          <td>
+            {{link-to "Edit" "lists.edit" list}}
+          </td>
+          <td>
+            {{link-to "Show" "lists.show" list}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" list}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Lists found
+  </p>
+{{/if}}
