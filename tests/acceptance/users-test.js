@@ -50,7 +50,6 @@ test('create a new user', function(assert) {
     assert.equal(currentPath(), 'users.new');
 
     fillIn('label:contains(Name) input', 'MyString');
-    fillIn('label:contains(List) input', 'MyString');
 
     click('input:submit');
   });
@@ -70,7 +69,6 @@ test('update an existing user', function(assert) {
     assert.equal(currentPath(), 'users.edit');
 
     fillIn('label:contains(Name) input', 'MyString');
-    fillIn('label:contains(List) input', 'MyString');
 
     click('input:submit');
   });
@@ -90,7 +88,6 @@ test('show an existing user', function(assert) {
     assert.equal(currentPath(), 'users.show');
 
     assert.equal(find('p strong:contains(Name:)').next().text(), 'MyString');
-    assert.equal(find('p strong:contains(List:)').next().text(), 'MyString');
   });
 });
 
