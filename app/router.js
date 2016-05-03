@@ -1,11 +1,18 @@
 import Ember from 'ember';
+import MetaRoute from 'ember-cli-admin/dsl/meta-route';
 import config from './config/environment';
 
-const Router = Ember.Router.extend({
+var Router = Ember.Router.extend({
   location: config.locationType
 });
 
 Router.map(function() {
+});
+
+MetaRoute.map(Router, function() {
+  this.resources("todo");
+
+  this.route("dashboard", {path: "/"});
 });
 
 export default Router;
